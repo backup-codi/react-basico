@@ -1,12 +1,32 @@
-// const element = document.createElement('h1');
-// element.innerText = 'Hola, Platzi badges 2';
-// const container = document.getElementById('app');
-// container.appendChild(element);
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import React from 'react'; //Sera el analogo a createElement
-import ReactDOM from 'react-dom'; // Sera el analogo a appendChild
+// const jsx = <h1>Hello, Platzi 2 update</h1>;
+// const element = React.createElement('a', { href: 'https://platzi.com' }, 'Ir a platzi');
+const name = 'Lopez';
+const sum = () => 3 + 3;
+
+//la forma de hacerlo con React
+// const element = React.createElement('h1', {}, `Hola! soy ${name}`);
+
+// La forma de hacerlo con JSX
+//Dentro de jsx se admiten expresiones - 2+2   -  functiones
+// Si llegaran a ser false (null, string vacio, false, cero, undefine) NO SE VAN A VER
+// const jsx = <h1>Hola soy {undefined}</h1>;
+
+const jsx = (
+  <div>
+    <h1>Hola soy Alberto</h1>
+    <p>Y soy ingeniero Frontend</p>
+  </div>
+);
+const element = React.createElement(
+  'div',
+  {},
+  React.createElement('h1', {}, `Hola Soy Alberto`),
+  React.createElement('p', {}, `Soy ingeniero Frontend de la web`)
+);
 
 const container = document.getElementById('app');
-const element = <h1>Hello, Platzi 2 update</h1>; // Esto es JSX, y para poder utilizarlo SIEMPREEEEE hay que importar 'react'
 
-ReactDOM.render(element, container); // Primer dato que queremos renderizar y el segundo es donde lo queremos renderizar
+ReactDOM.render(element, container);
