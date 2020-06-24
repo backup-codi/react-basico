@@ -1,23 +1,35 @@
 import React from 'react';
 
 class BadgeForm extends React.Component {
-  // El metodo recibe un evento  - (e)
+  // Para poder usar value={this.state.firstName} en los input se debe declarar e inicializar el state
+  // con el fin de que el input no guarde los valores
+  // Se recomienda que solo el state maneje la informacion a manipular
+  state = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    jobTitle: '',
+    twitter: '',
+  };
+
   handleChange = (e) => {
-    console.log({
-      name: e.target.name,
-      value: e.target.value,
+    // Para guardar la informacion en el estado usamos setState y se le pasa un objeto con la informacion que
+    // deseamos guardar
+    this.setState({
+      // firstName: e.target.value,
+      // Para guardar el valor dependiendo el nombre del input usamos
+      [e.target.name]: e.target.value,
     });
   };
 
-  // Cuando se activa el evento de que se presiono el boton se imprime un mensaje
   handleClick = (e) => {
     console.log('Button was clicked');
   };
 
-  // Esta es otra manera de impedir que el formulario se envie y se recarge la pagina.
   handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form was submitted');
+    console.log(this.state);
   };
 
   render() {
@@ -28,9 +40,46 @@ class BadgeForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>First Name</label>
-            {/* En un input cada que el usuario escribe algo de activa un evento onChange */}
-            <input onChange={this.handleChange} className="form-control" type="text" name="firstName" />
-            {/* Para evitar que se recarge la pagina se puede usar el atributo type="button" ya que por default tiene el valor de submit */}
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="firstName"
+              value={this.state.firstName}
+            />
+            <label>Last Name</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="lastName"
+              value={this.state.lastName}
+            />
+            <label>Email</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="email"
+              name="email"
+              value={this.state.email}
+            />
+            <label>Job Title</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="jobTitle"
+              value={this.state.jobTitle}
+            />
+            <label>Twitter</label>
+            <input
+              onChange={this.handleChange}
+              className="form-control"
+              type="text"
+              name="twitter"
+              value={this.state.twitter}
+            />
+
             <button onClick={this.handleClick} className="btn btn-primary mt-2">
               Save
             </button>
