@@ -7,6 +7,44 @@ import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
 
 class BadgeNew extends React.Component {
+  state = {
+    form: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      jobTitle: '',
+      twitter: '',
+    },
+  };
+
+  /* handleChange = (e) => {
+    this.setState({
+      form: {
+        // El problema aqui es que cuando hay un cambio se reescribe form
+        [e.target.name]: e.target.value,
+      },
+    });
+  }; */
+
+  // PRIMER SOLUCION PARA NO SOBREESCRIBIR LOS CAMBIOS QYE LLEGAN
+  /* handleChange = (e) => {
+    const nextForm = this.state.form;
+    nextForm[e.target.name] = e.target.value;
+    this.setState({
+      form: nextForm,
+    });
+  }; */
+
+  //SEGUNDA SOLUCION
+  handleChange = (e) => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
   render() {
     return (
       <div>
@@ -18,15 +56,18 @@ class BadgeNew extends React.Component {
           <div className="row">
             <div className="col-7">
               <Badge
-                firstName="Alberto"
-                lastName="López"
-                twitter="alberto27"
-                jobTitle="Engineer"
+                firstName={this.state.form.firstName}
+                lastName={this.state.form.lastName}
+                twitter={this.state.form.twitter}
+                jobTitle={this.state.form.jobTitle}
                 avatarUrl="https://www.gravatar.com/avatar/580a552f26ac5e3a0817c3ecc5b9d690?d=identicon"
               />
             </div>
             <div className="col-5">
-              <BadgeForm />
+              <BadgeForm
+                onChange={this.handleChange}
+                formValues={this.state.form}
+              />
             </div>
           </div>
         </div>
