@@ -16,26 +16,6 @@ class BadgeNew extends React.Component {
       twitter: '',
     },
   };
-
-  /* handleChange = (e) => {
-    this.setState({
-      form: {
-        // El problema aqui es que cuando hay un cambio se reescribe form
-        [e.target.name]: e.target.value,
-      },
-    });
-  }; */
-
-  // PRIMER SOLUCION PARA NO SOBREESCRIBIR LOS CAMBIOS QYE LLEGAN
-  /* handleChange = (e) => {
-    const nextForm = this.state.form;
-    nextForm[e.target.name] = e.target.value;
-    this.setState({
-      form: nextForm,
-    });
-  }; */
-
-  //SEGUNDA SOLUCION
   handleChange = (e) => {
     this.setState({
       form: {
