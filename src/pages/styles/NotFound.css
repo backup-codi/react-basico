@@ -1,0 +1,38 @@
+.contenedor {
+  display: grid;
+  height: 95vh;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: auto;
+  background: url('../../images/stars.svg'), #1b1b25;
+  background-repeat: repeat;
+  color: #97cb3f;
+}
+.container__404 {
+  display: flex;
+  justify-content: center;
+}
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+.logo404 {
+  width: 50%;
+}
+.ops {
+  font-size: 7em;
+  font-weight: bold;
+}
+.ops__title {
+  /* font-weight: bold; */
+  font-size: 2.5em;
+}
+.ops__description {
+  font-size: 2em;
+}
+.ops__logo {
+  width: 20%;
+}
