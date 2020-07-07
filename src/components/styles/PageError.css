@@ -1,0 +1,14 @@
+.PageError {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  width: 100%;
+  background: url('../../images/stars.svg'), #1b1b25;
+  background-repeat: repeat;
+  color: white;
+}
+.PageError img {
+  width: 40%;
+}
