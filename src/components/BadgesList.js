@@ -3,6 +3,7 @@ import React from 'react';
 import twitter from '../images/logoTwitter.svg';
 import './styles/BadgesList.css';
 import { Link } from 'react-router-dom';
+import Gravatar from './Gravatar';
 
 class BadgesList extends React.Component {
   render() {
@@ -38,9 +39,9 @@ class BadgesList extends React.Component {
                     @{badge.twitter}
                   </p>
                 </span>
-                <img
+                <Gravatar
                   className="BadgesListItem__avatar"
-                  src={badge.avatarUrl}
+                  email={badge.email}
                   alt="Avatar"
                 />
               </li>
