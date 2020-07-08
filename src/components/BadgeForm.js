@@ -63,6 +63,10 @@ class BadgeForm extends React.Component {
               Save
             </button>
           </div>
+          {/* Si error llega con true entonces vamos a desplegar este parrafo */}
+          {this.props.error && (
+            <p className="text-danger">{this.props.error.message}</p>
+          )}
         </form>
       </div>
     );
