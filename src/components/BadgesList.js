@@ -24,26 +24,31 @@ class BadgesList extends React.Component {
           {this.props.badges.map((badge) => {
             return (
               <li key={badge.id} className="BadgesListItem">
-                <span className="info">
-                  <h5 className="font-weight-bold">
-                    {badge.firstName} {badge.lastName}
-                  </h5>
+                <Link
+                  className="text-reset text-decoration-none"
+                  to={`/badges/${badge.id}/edit`}
+                >
+                  <span className="info">
+                    <h5 className="font-weight-bold">
+                      {badge.firstName} {badge.lastName}
+                    </h5>
 
-                  <p>{badge.jobTitle}</p>
-                  <p className="text-primary">
-                    <img
-                      className="logoTwitter"
-                      src={twitter}
-                      alt="Logo Twitter"
-                    />
-                    @{badge.twitter}
-                  </p>
-                </span>
-                <Gravatar
-                  className="BadgesListItem__avatar"
-                  email={badge.email}
-                  alt="Avatar"
-                />
+                    <p>{badge.jobTitle}</p>
+                    <p className="text-primary">
+                      <img
+                        className="logoTwitter"
+                        src={twitter}
+                        alt="Logo Twitter"
+                      />
+                      @{badge.twitter}
+                    </p>
+                  </span>
+                  <Gravatar
+                    className="BadgesListItem__avatar"
+                    email={badge.email}
+                    alt="Avatar"
+                  />
+                </Link>
               </li>
             );
           })}
