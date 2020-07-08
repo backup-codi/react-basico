@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import PageLoading from '../components/PageLoading';
 import PageError from '../components/PageError';
@@ -35,7 +35,7 @@ class BadgeDetailsContainer extends React.Component {
       return <PageError error={this.state.error} />;
     }
 
-    const badge = this.state.data;
+    // const badge = this.state.data;
 
     return <BadgeDetails badge={this.state.data} />;
   }
