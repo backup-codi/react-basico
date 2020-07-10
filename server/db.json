@@ -6,13 +6,13 @@
       "lastName": "Grady",
       "email": "Leann_Berge@gmail.com",
       "jobTitle": "Legacy Brand Director",
-      "twitter": "FredaGrady22221-7573",
+      "twitter": "FredaGrady",
       "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
     },
     {
       "id": "63c03386-33a2-4512-9ac1-354ad7bec5e9",
       "firstName": "Daphney",
-      "lastName": "Torphy",
+      "lastName": "Gutierrez",
       "email": "Ron61@hotmail.com",
       "jobTitle": "National Markets Officer",
       "twitter": "DaphneyTorphy96105",
@@ -68,6 +68,14 @@
       "jobTitle": "princes",
       "twitter": "mi_princes",
       "id": "bI7msAU"
+    },
+    {
+      "firstName": "Erik",
+      "lastName": "Garcia",
+      "email": "erik.kasady.665@gmail.com",
+      "jobTitle": "Engineer",
+      "twitter": "kasady",
+      "id": "zeWL1Ua"
     }
   ]
 }
